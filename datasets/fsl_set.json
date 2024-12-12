@@ -1,0 +1,14 @@
+[
+  {
+    "SOURCE": "Kset x = 5\nKadd x, 3\nKmul 10, 2\nKpow 2, 3\nKmod 10, 3\nKsqrt 16\nKlog 100\nKfib 7",
+    "GRAMMAR": "start: statement+\n\n    statement: \"Kadd\" expr \",\" expr           -> add\n             | \"Ksub\" expr \",\" expr           -> subtract\n             | \"Kmul\" expr \",\" expr           -> multiply\n             | \"Kdiv\" expr \",\" expr           -> divide\n             | \"Kmod\" expr \",\" expr           -> mod\n             | \"Kpow\" expr \",\" expr           -> power\n             | \"Ksqrt\" expr                    -> sqrt\n             | \"Klog\" expr                     -> log\n             | \"Kfac\" expr                     -> factorial\n             | \"Kfib\" expr                     -> fibonacci\n             | \"Kset\" NAME \"=\" expr            -> set_var\n\n    expr: NUMBER                            -> number\n        | NAME                              -> variable\n        | \"(\" expr \")\"                     -> group\n        | expr \"+\" expr                     -> add\n        | expr \"-\" expr                     -> subtract\n        | expr \"*\" expr                     -> multiply\n        | expr \"/\" expr                     -> divide\n\n    %import common.NUMBER                   // Import number token\n    %import common.WS                       // Import whitespace\n    NAME: /[a-zA-Z_][a-zA-Z0-9_]*/          // Define NAME token (variable names)\n    %ignore WS                              // Ignore whitespace"
+  },
+  {
+    "SOURCE": "Kset y = 8\nKsub y, 3\nKdiv 10, 2\nKfac 4",
+    "GRAMMAR": "start: instruction+\ninstruction: \"Kset\" variable \"=\" NUMBER\n          | \"Ksub\" variable \",\" NUMBER\n          | \"Kdiv\" NUMBER \",\" NUMBER\n          | \"Kfac\" NUMBER\nvariable: LETTER (LETTER | DIGIT)*\n%import common.LETTER\n%import common.DIGIT\n%import common.NUMBER\n%ignore /\\s+/"
+  },
+  {
+    "SOURCE": "Kadd 5, 3\nKmod 10, 0",
+    "GRAMMAR": "start: instruction+\ninstruction: add_instruction | mod_instruction\nadd_instruction: \"Kadd\" NUMBER \",\" NUMBER\nmod_instruction: \"Kmod\" NUMBER \",\" NUMBER\n%import common.NUMBER\n%ignore /\\s+/"
+  }
+]

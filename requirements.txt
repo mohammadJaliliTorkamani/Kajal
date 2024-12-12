@@ -1,0 +1,4 @@
+openai~=1.54.4
+tiktoken~=0.8.0
+lark~=1.2.2
+scikit-learn~=1.5.2

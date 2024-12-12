@@ -1,0 +1,62 @@
+[
+  {
+    "SOURCE": "set server \"example.com\"\nset port 8080\nenable logging\n"
+  },
+  {
+    "SOURCE": "task \"backup_files\"\non event \"daily_backup\"\nexecute \"run_backup.sh\"\n"
+  },
+  {
+    "SOURCE": "select name, age\nfrom users\nwhere age > 18\n"
+  },
+  {
+    "SOURCE": "create button \"Submit\"\nalign center\nset color \"blue\"\n"
+  },
+  {
+    "SOURCE": "if temperature > 30\nthen set fan_speed \"high\"\nelse set fan_speed \"low\"\n"
+  },
+  {
+    "SOURCE": "source \"data.csv\"\ntransform \"normalize\"\noutput \"cleaned_data.csv\"\n"
+  },
+  {
+    "SOURCE": "allow user \"admin\"\naccess resource \"settings\"\ndeny user \"guest\"\n"
+  },
+  {
+    "SOURCE": "notify email \"user@example.com\"\non event \"file_uploaded\"\nwith message \"Your file has been uploaded successfully.\"\n"
+  },
+  {
+    "SOURCE": "create vlan 10\nassign ip \"192.168.1.1\"\nenable dhcp\n"
+  },
+  {
+    "SOURCE": "test \"LoginFunctionality\"\ninput username \"user1\"\nexpect status \"success\"\n"
+  },
+  {
+    "SOURCE": "func greet():\n    print(\"Hello, World!\")\nend\n"
+  },
+  {
+    "SOURCE": "let x := 10\nif (x > 5) {\n    log(\"x is greater than 5\")\n}\n"
+  },
+  {
+    "SOURCE": "fn main() {\n    let int count = 5;\n    if count >= 3 {\n        output(\"Count is valid\");\n    }\n}\n"
+  },
+  {
+    "SOURCE": "def calculate\n    result = 3 ** 2\n    print result\nend\n"
+  },
+  {
+    "SOURCE": "fetch name, age\ninto user_table\nwhere age > 21;\n"
+  },
+  {
+    "SOURCE": "function add(a, b)\n    return a plus b\nend\n"
+  },
+  {
+    "SOURCE": "square x -> x * x\nprint square(4)\n"
+  },
+  {
+    "SOURCE": "create_file \"notes.txt\"\nwrite_to \"notes.txt\" \"Hello, DSL!\"\n"
+  },
+  {
+    "SOURCE": "object {\n    key: \"value\",\n    count: 5,\n    flag: yes\n}\n"
+  },
+  {
+    "SOURCE": "fun greet() {\n    print \"Welcome\"\n}\nend\n"
+  }
+]
